@@ -1,0 +1,27 @@
+<form [formGroup]="employeeForm">
+    <div>
+        <label>Employee ID</label>
+        <input formControlName="employeeId">
+    </div>
+    <div>
+        <label>First Name</label>
+        <input formControlName="firstName">
+    </div>
+    <div>
+        <label>Last Name</label>
+        <input formControlName="lastName">
+    </div>
+    <div>
+        <label>Phone Number</label>
+        <input formControlName="phoneNumber">
+    </div>
+    <div>
+        <label>Address</label>
+        <input formControlName="address">
+    </div>
+    <div>
+        <label>Title</label>
+        <input formControlName="title">
+    </div>
+</form>
+<button (click)="submitFormValue()">{{action}}</button>

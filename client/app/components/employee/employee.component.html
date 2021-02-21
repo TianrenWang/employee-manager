@@ -1,0 +1,27 @@
+<!-- Only display this if the employee is not filtered out -->
+<div *ngIf="isFiltered() === false">
+
+    <!-- Non-editing mode -->
+    <div *ngIf="editing === false">
+        <p>
+            *********************<br />
+            Employee ID: {{employee.employeeId}}<br />
+            First Name: {{employee.firstName}}<br />
+            Last Name: {{employee.lastName}}<br />
+            Phone Number: {{employee.phoneNumber}}<br />
+            Address: {{employee.address}}<br />
+            Title: {{employee.title}}<br />
+        </p>
+        <button (click)="editEmployee()">Edit</button>
+        <button (click)="deleteEmployee()">Delete</button>
+    </div>
+
+    <!-- Editing mode -->
+    <div *ngIf="editing === true">
+        <app-employee-form
+            [action]="'Submit Edit'"
+            [initialValue]="employee!"
+            (employeeFormComplete)="submitModifiedEmployee($event)"></app-employee-form>
+        <button (click)="cancelEdit()">Cancel Edit</button>
+    </div>
+</div>

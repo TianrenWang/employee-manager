@@ -1,27 +1,23 @@
-# EmployeeManager
+# Setup Instruction (For MacOS)
+1. From https://nodejs.org/en/download/, download the latest version that is most appropriate for you.
+2. Go to your command line and do `sudo npm install -g @angular/cli`
+3. From https://www.mongodb.com/try/download/community, download the latest version of community that is the most appropriate for you.
+4. Unpack the MongoDB zip/tar.gz file to get a folder. Rename that folder as “mongodb”. Put that folder somewhere safe, like your Desktop or Document. In that safe location, create another folder called “mongodb-data” that will store all MongoDB data on your local server.
+5. Depending on where you put these folders, later you are going to need this command `/<safe_location>/mongodb/bin/mongod --dbpath=/<safe_location>/mongodb-data`. Remember this command.
+6. Perform `git clone` on the repository. `cd` to that repository and run `npm i`.
+7. Run `/<safe_location>/mongodb/bin/mongod --dbpath=/<safe_location>/mongodb-data`
+8. Open up a new command line/terminal in the repository folder, and run `npm run dev`.
+9. Open up a new command line/terminal in the repository folder, and run `ng serve`.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+At the end of this, you should be able to access http://localhost:4200/ and see the homepage of employee manager.
 
-## Development server
+# Testing Instruction
+1. Frontend test can be run by the command `ng test`
+2. To run the backend test, first install mocha `sudo npm install -g mocha`
+3. To test the database models, run `mocha server/models/tests`
+4. To test the API routes, run `mocha server/routes/tests`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Using Employee Manager
+In `/server/config/mongo.js`, two admin accounts are created with login information as the following:
+`username: interview1, password: 12345` and `username: interview2, password: 12345`.
+Use these two accounts to login to the system.
